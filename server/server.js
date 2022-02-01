@@ -1,13 +1,18 @@
 import express from 'express'
+import cors from 'cors'
+import cookieParser from 'cookie-parser'
 import { resolve } from 'path'
 
 import { Html } from '../client/html.js'
 
 const server = express()
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 const __dirname = process.cwd()
 
 const middleware = [
+  cors(),
+  cookieParser(),
+  express.json({ limit: '50kb' }),
   express.static(resolve(__dirname, 'dist'))
 ]
 
@@ -31,5 +36,5 @@ server.get('/*', (req, res) => {
 })
 
 server.listen(PORT, () => {
-	console.log(`Serving at http://localhost${PORT}`)
+	console.log(`Serving at http://localhost:${PORT}`)
 })
