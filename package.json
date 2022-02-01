@@ -9,7 +9,7 @@
     "dev": "pnpm run watch:server & pnpm run watch:client",
     "watch:server": "nodemon server/server.js",
     "watch:client": "webpack server --config webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress --profile"
+    "build": "NODE_ENV=production webpack --config webpack.prod.js --progress --profile"
   },
   "repository": {
     "type": "git",
