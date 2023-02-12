@@ -3,7 +3,7 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "sourceMap": false,
-    "module": "commonjs",
+    "module": "es6",
     "target": "es6",
     "jsx": "react",
     "resolveJsonModule": true,

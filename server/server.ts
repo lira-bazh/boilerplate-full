@@ -23,14 +23,9 @@ server.get('/', (req, res) => {
 })
 
 server.get('/*', (req, res) => {
-  const initialState = {
-    location: req.url
-  }
-
   res.send(
     Html({
-      body: '',
-      initialState
+      body: ''
     })
   )
 })
